@@ -57,8 +57,9 @@ Add the path to yii-return-url to the `components` in your yii configuration:
 return array(
 	'components' => array(
 	        'returnUrl' => array(
-        	    'class' => 'vendor.mrphp.yii-return-url.components.EReturnUrl',
-        	    //'class' => 'ext.yii-return-url.components.EReturnUrl', // if you downloaded into ext
+			'class' => 'vendor.mrphp.yii-return-url.components.EReturnUrl',
+			// if you downloaded into ext
+			//'class' => 'ext.yii-return-url.components.EReturnUrl',
 	        ),
 	),
 );
@@ -71,19 +72,21 @@ Your user is on a search results page, and you have a link to an update form.  A
 
 On the start page, add a returnUrl to your link, for example in `views/post/index.php`:
 ```php
-// generate a returnUrl link value, pass true so that it links to this page
+// generate a returnUrl link value
+// pass true so that it points to the current page
 $returnUrlLinkValue = Yii::app()->returnUrl->getLinkValue(true);
-CHtml::link('edit post', array('post/update', 'returnUrl' => $returnUrlLinkValue));
+CHtml::link('edit post', array('post/update', 'id' => $post->id, 'returnUrl' => $returnUrlLinkValue));
 ```
 
 On the update page, add a returnUrl to your form, for example in `views/post/update.php`:
 ```php
-// generate a returnUrl form value, pass false so that it links to the returnUrl from the request params
+// generate a returnUrl form value
+// pass false so that it points to the returnUrl from the request params provided by your link
 $returnUrlFormValue = Yii::app()->returnUrl->getFormValue(false);
 CHtml::hiddenField('returnUrl', $returnUrlFormValue);
 ```
 
-In the controller action that handles the form, change the `redirect()`, for example `Post::actionUpdate()`
+In the controller action that handles the form, change the call to `$this->redirect()`, for example in `Post::actionUpdate()`
 ```php
 $altUrl = array('post/index'); // this is where we used to redirect to, we use it as a failback
 $this->redirect(Yii::app()->returnUrl->getUrl($altUrl));
