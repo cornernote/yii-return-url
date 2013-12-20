@@ -1,6 +1,6 @@
 # Yii ReturnUrl
 
-Maintain the state of Return Urls in the request.
+Maintain the state of Return Urls by using the request.
 
 You might be saying, Yii already handles a returnUrl perfectly fine with the `CWebUser::getReturnUrl()` and `CWebUser::setReturnUrl()` methods.  Why not use those?
 
@@ -104,6 +104,6 @@ $this->redirect(Yii::app()->returnUrl->getUrl($altUrl));
 
 ## Links
 
-- [Yii Extension](http://www.yiiframework.com/extension/yii-return-url)
+- [Yii Extension](http://www.yiiframework.com/extension/return-url)
 - [Composer Package](https://packagist.org/packages/mrphp/yii-return-url)
 - [MrPHP](http://mrphp.com.au)
