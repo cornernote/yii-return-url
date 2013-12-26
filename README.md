@@ -40,7 +40,7 @@ Please download using ONE of the following methods:
 
 ```
 curl http://getcomposer.org/installer | php
-php composer.phar require mrphp/yii-return-url
+php composer.phar require cornernote/yii-return-url
 ```
 
 
@@ -57,7 +57,7 @@ Add the path to yii-return-url to the `components` in your yii configuration:
 return array(
 	'components' => array(
 	        'returnUrl' => array(
-			'class' => 'vendor.mrphp.yii-return-url.components.EReturnUrl',
+			'class' => 'vendor.cornernote.yii-return-url.components.EReturnUrl',
 			// if you downloaded into ext
 			//'class' => 'ext.yii-return-url.components.EReturnUrl',
 	        ),
@@ -98,12 +98,12 @@ $this->redirect(Yii::app()->returnUrl->getUrl($altUrl));
 - Author: Brett O'Donnell <cornernote@gmail.com>
 - Author: Zain Ul abidin <zainengineer@gmail.com>
 - Source Code: https://github.com/cornernote/yii-return-url
-- Copyright © 2013 Mr PHP <info@mrphp.com.au>
+- Copyright Â© 2013 Mr PHP <info@mrphp.com.au>
 - License: BSD-3-Clause https://raw.github.com/cornernote/yii-return-url/master/LICENSE
 
 
 ## Links
 
 - [Yii Extension](http://www.yiiframework.com/extension/return-url)
-- [Composer Package](https://packagist.org/packages/mrphp/yii-return-url)
+- [Composer Package](https://packagist.org/packages/cornernote/yii-return-url)
 - [MrPHP](http://mrphp.com.au)
