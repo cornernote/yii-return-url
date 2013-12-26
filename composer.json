@@ -1,5 +1,5 @@
 {
-    "name": "mrphp/yii-return-url",
+    "name": "cornernote/yii-return-url",
     "description": "Maintain the state of Return Urls across multiple tabs.",
     "type": "library",
     "license": "BSD-3-Clause",
