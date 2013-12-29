@@ -2,6 +2,11 @@
 
 Maintain the state of Return Urls by using the request.
 
+[![Mr PHP](https://raw.github.com/cornernote/mrphp-assets/master/img/code-banner.png)](http://mrphp.com.au) [![Project Stats](https://www.ohloh.net/p/yii-audit-module/widgets/project_thin_badge.gif)](https://www.ohloh.net/p/yii-return-url) 
+
+[![Latest Stable Version](https://poser.pugx.org/cornernote/yii-return-url/v/stable.png)](https://packagist.org/packages/cornernote/yii-return-url) [![Build Status](https://travis-ci.org/cornernote/yii-return-url.png?branch=master)](https://travis-ci.org/cornernote/yii-return-url)
+
+
 You might be saying, Yii already handles a returnUrl perfectly fine with the `CWebUser::getReturnUrl()` and `CWebUser::setReturnUrl()` methods.  Why not use those?
 
 These methods store the returnUrl into a single variable in the users session.  This becomes a flaw when we have multiple tabs open.  Take the following scenario:
