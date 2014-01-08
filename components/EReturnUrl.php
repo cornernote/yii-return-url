@@ -103,7 +103,7 @@ class EReturnUrl extends CComponent
         // alt url or current page
         if (!$url && $altUrl)
             $url = $altUrl;
-        return $url;
+        return $url ? $url : Yii::app()->homeUrl;
     }
 
     /**
