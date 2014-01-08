@@ -101,8 +101,8 @@ class EReturnUrl extends CComponent
     {
         $url = $this->getUrlFromSubmitFields();
         // alt url or current page
-        if (!$url)
-            $url = $altUrl ? $altUrl : Yii::app()->getRequest()->getUrl();
+        if (!$url && $altUrl)
+            $url = $altUrl;
         return $url;
     }
 
