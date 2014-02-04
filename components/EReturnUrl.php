@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Wrapper to maintain state of a Return Url
  *
@@ -10,21 +11,13 @@
  * @link https://github.com/cornernote/yii-return-url
  * @license BSD-3-Clause https://raw.github.com/cornernote/yii-return-url/master/LICENSE
  */
-class EReturnUrl extends CComponent
+class EReturnUrl extends CApplicationComponent
 {
 
     /**
      * @var string The key used in GET and POST requests for the Return Url.
      */
     public $requestKey = 'returnUrl';
-
-    /**
-     *
-     */
-    public function init()
-    {
-
-    }
 
     /**
      * Get url from submitted data or the current page url
