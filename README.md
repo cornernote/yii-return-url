@@ -61,11 +61,17 @@ Add the path to yii-return-url to the `components` in your yii configuration:
 ```php
 return array(
 	'components' => array(
-	        'returnUrl' => array(
+		'returnUrl' => array(
 			'class' => 'vendor.cornernote.yii-return-url.components.EReturnUrl',
 			// if you downloaded into ext
 			//'class' => 'ext.yii-return-url.components.EReturnUrl',
-	        ),
+		),
+		'cache'=>array(
+			// cache is required for this extension
+			'class' => 'CFileCache', 
+			//'class' => 'CMemCache',
+			//'class' => 'CApcCache',
+		),
 	),
 );
 ```
