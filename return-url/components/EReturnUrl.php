@@ -128,6 +128,7 @@ class EReturnUrl extends CApplicationComponent
      */
     private function urlDecode($key)
     {
+        if (!is_scalar($key)) return false;
         return Yii::app()->cache->get($this->requestKey . '.' . $key);
     }
 
