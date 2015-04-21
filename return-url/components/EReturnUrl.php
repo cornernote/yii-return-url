@@ -107,8 +107,8 @@ class EReturnUrl extends CApplicationComponent
     private function getUrlFromSubmitFields()
     {
         $requestKey = $this->requestKey;
-        $url = isset($_GET[$requestKey]) ? $_GET[$requestKey] : (isset($_POST[$requestKey]) ? $_POST[$requestKey] : false);
-        return isset($_GET[$requestKey]) ? $this->urlDecode($url) : $url;
+        $url = isset($_GET[$requestKey]) && is_scalar($_GET[$requestKey]) ? $_GET[$requestKey] : (isset($_POST[$requestKey]) && is_scalar($_POST[$requestKey]) ? $_POST[$requestKey] : false);
+        return isset($_GET[$requestKey]) && is_scalar($_GET[$requestKey]) ? $this->urlDecode($url) : $url;
     }
 
     /**
