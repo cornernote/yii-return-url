@@ -109,6 +109,7 @@ class EReturnUrl extends CApplicationComponent
         $requestKey = $this->requestKey;
         $url = isset($_GET[$requestKey]) && is_scalar($_GET[$requestKey]) ? $_GET[$requestKey] : (isset($_POST[$requestKey]) && is_scalar($_POST[$requestKey]) ? $_POST[$requestKey] : false);
         $url = str_replace(chr(0), '', $url); // strip nul byte
+        $url = preg_replace('/\s+/', '', $url); // strip whitespace
         return isset($_GET[$requestKey]) && is_scalar($_GET[$requestKey]) ? $this->urlDecode($url) : $url;
     }
 
